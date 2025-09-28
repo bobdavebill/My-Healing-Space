@@ -1,7 +1,7 @@
 /* General styles */
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
+  margin: 15%;
   padding: 0;
   background-color: #FF69B4;
 }
@@ -285,4 +285,5 @@ footer {
 #navbar a.active {
   background-color: #04AA6D;
   color: white;
+
 }
