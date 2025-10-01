@@ -18,18 +18,23 @@
 </script>
 
 <body>
- <div id="navbar">
-  <a href="index.html" class="logo">My Healing Space</a>
-  <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
-    <i class="fa fa-bars"></i>
-  </a>
-  <div id="nav-links">
-    <a href="index.html">Home</a>
-    <a href="contact.html">Contact</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
+<nav id="navbar">
+  <a class="logo" href="index.html">My Healing Space</a>
+
+  <!-- hamburger button -->
+  <button class="icon" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <i class="fas fa-bars" aria-hidden="true"></i>
+  </button>
+
+  <!-- links container -->
+  <div id="nav-links" aria-hidden="true">
+    <a href="index.html" class="nav-link active">Home</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
   </div>
-</div>
+</nav>
+
 
 
   <div class="bgimg-1">
@@ -93,5 +98,6 @@ publishable-key="pk_test_51SCC1Y1OcjdVzqEJxFfYPX8kDreZxElkgtaN26IORQYfgmbYe8TC3Z
 
 
 </html>
+
 
 
