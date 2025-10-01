@@ -7,69 +7,92 @@ body {
 }
  
  /* Navbar styles */
+/* reset */
+*{box-sizing:border-box;margin:0;padding:0}
+
+/* NAVBAR base */
 #navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #333;
-  padding: 10px;
-  position: relative;
+  background:#333;
+  padding:10px 16px;
+  position:relative;
+  z-index:1000;
 }
 
-#navbar a {
-  color: white;
-  text-decoration: none;
-  padding: 14px 20px;
-  display: inline-block;
-}
-
-#navbar a.active {
-  background-color: #04AA6D;
-}
-
-/* Logo always visible */
 #navbar .logo {
-  font-weight: bold;
-  font-size: 18px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  font-size:18px;
+  padding:8px 12px;
 }
 
-/* Hide hamburger by default (desktop only) */
-#navbar .icon {
-  display: none;
-  font-size: 22px;
-  cursor: pointer;
-  color: white;
-}
-
-/* Default nav links (desktop view) */
+/* nav links (desktop default) */
 #nav-links {
-  display: flex;
-  gap: 10px;
+  display:flex;
+  gap:8px;
+  align-items:center;
 }
 
-/* --- Mobile --- */
-@media screen and (max-width: 768px) {
+#nav-links a {
+  color:#fff;
+  text-decoration:none;
+  padding:10px 12px;
+  border-radius:4px;
+}
+
+#nav-links a.active {
+  background:#04AA6D;
+  color:#fff;
+}
+
+/* hamburger (hidden by default) */
+#navbar .icon {
+  display:none;
+  background:none;
+  border:0;
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+  padding:8px;
+}
+
+/* a11y focus */
+#navbar a:focus, #navbar .icon:focus { outline:2px solid rgba(255,255,255,0.6); outline-offset:3px; }
+
+/* --- MOBILE: <=768px --- */
+@media (max-width:768px) {
+  /* hide links until toggled, then show vertically */
   #nav-links {
-    display: none;              /* hide links initially */
-    flex-direction: column;     /* vertical layout */
-    width: 100%;
-    background-color: #333;
+    display:none;
+    flex-direction:column;
+    width:100%;
+    background:#333;
+    position:absolute;
+    left:0;
+    top:100%;
+    box-shadow:0 6px 18px rgba(0,0,0,.15);
   }
 
   #nav-links a {
-    text-align: center;
-    border-top: 1px solid #444;
-    width: 100%;
+    display:block;
+    padding:14px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,0.06);
   }
 
-  #navbar .icon {
-    display: block; /* show hamburger on mobile */
-  }
-
-  #nav-links.show {
-    display: flex; /* show links when toggled */
-  }
+  #navbar .icon { display:block; }
+  #nav-links.show { display:flex; }
 }
+
+/* make sure desktop explicitly shows links even if something else overrides */
+@media (min-width:769px) {
+  #nav-links { display:flex !important; position:static; box-shadow:none; }
+  #navbar .icon { display:none !important; }
+}
+
 
 
 /* CSS */
@@ -378,6 +401,7 @@ footer {
   color: white;
 
 }
+
 
 
 
