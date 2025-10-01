@@ -6,7 +6,45 @@ body {
   background-color: #ddf2d1;
 }
  
- 
+ /* Default navbar (desktop view) */
+#navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+}
+
+#navbar a {
+  padding: 14px 20px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+/* Highlight active link */
+#navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Mobile view (screen width <= 768px) */
+@media screen and (max-width: 768px) {
+  #navbar {
+    flex-direction: column;   /* stack items vertically */
+    align-items: center;      /* center items */
+  }
+
+  #navbar a {
+    display: block;
+    width: 100%;              /* make links full width */
+    text-align: center;
+    border-bottom: 1px solid #444; /* optional divider */
+  }
+
+  #navbar a:last-child {
+    border-bottom: none; /* remove line on last item */
+  }
+}
+
 /* CSS */
 .button {
   background-color: #c2fbd7;
@@ -313,6 +351,7 @@ footer {
   color: white;
 
 }
+
 
 
 
