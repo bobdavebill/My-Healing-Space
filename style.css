@@ -6,44 +6,71 @@ body {
   background-color: #ddf2d1;
 }
  
- /* Default navbar (desktop view) */
+ /* Navbar styles */
 #navbar {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   background-color: #333;
+  padding: 10px;
+  position: relative;
 }
 
 #navbar a {
-  padding: 14px 20px;
-  text-decoration: none;
   color: white;
-  text-align: center;
+  text-decoration: none;
+  padding: 14px 20px;
+  display: inline-block;
 }
 
-/* Highlight active link */
 #navbar a.active {
   background-color: #04AA6D;
+}
+
+/* Logo always visible */
+#navbar .logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Hide hamburger by default (desktop only) */
+#navbar .icon {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
   color: white;
 }
 
-/* Mobile view (screen width <= 768px) */
+/* Default nav links (desktop view) */
+#nav-links {
+  display: flex;
+  gap: 10px;
+}
+
+/* --- Mobile --- */
 @media screen and (max-width: 768px) {
-  #navbar {
-    flex-direction: column;   /* stack items vertically */
-    align-items: center;      /* center items */
+  #nav-links {
+    display: none;              /* hide links initially */
+    flex-direction: column;     /* vertical layout */
+    width: 100%;
+    background-color: #333;
   }
 
-  #navbar a {
-    display: block;
-    width: 100%;              /* make links full width */
+  #nav-links a {
     text-align: center;
-    border-bottom: 1px solid #444; /* optional divider */
+    border-top: 1px solid #444;
+    width: 100%;
   }
 
-  #navbar a:last-child {
-    border-bottom: none; /* remove line on last item */
+  #navbar .icon {
+    display: block; /* show hamburger on mobile */
+  }
+
+  #nav-links.show {
+    display: flex; /* show links when toggled */
   }
 }
+
 
 /* CSS */
 .button {
@@ -351,6 +378,7 @@ footer {
   color: white;
 
 }
+
 
 
 
