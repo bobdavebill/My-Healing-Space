@@ -13,11 +13,57 @@
 
 </head>
 <script>
-  function toggleMenu() {
-    var links = document.getElementById("nav-links");
-    links.classList.toggle("show");
+(function(){
+  const btn = document.getElementById('nav-toggle');
+  const links = document.getElementById('nav-links');
+
+  if(!btn || !links) return;
+
+  function closeMenu(){
+    links.classList.remove('show');
+    btn.setAttribute('aria-expanded','false');
+    links.setAttribute('aria-hidden','true');
   }
+  function openMenu(){
+    links.classList.add('show');
+    btn.setAttribute('aria-expanded','true');
+    links.setAttribute('aria-hidden','false');
+  }
+  function toggleMenu(){
+    links.classList.contains('show') ? closeMenu() : openMenu();
+  }
+
+  btn.addEventListener('click', toggleMenu);
+  // close when a link is clicked (useful on mobile)
+  document.querySelectorAll('#nav-links a').forEach(a => a.addEventListener('click', closeMenu));
+
+  // keep state correct when resizing the window
+  window.addEventListener('resize', () => {
+    if(window.innerWidth > 768) {
+      // ensure nav-links visible on desktop and not marked as hidden
+      links.classList.remove('show');
+      links.setAttribute('aria-hidden','false');
+      btn.setAttribute('aria-expanded','false');
+    } else {
+      // on small screens hide by default
+      links.setAttribute('aria-hidden', links.classList.contains('show') ? 'false' : 'true');
+    }
+  });
+
+  // initial ARIA attributes
+  if(window.innerWidth <= 768) {
+    links.setAttribute('aria-hidden', 'true');
+    btn.setAttribute('aria-expanded','false');
+  } else {
+    links.setAttribute('aria-hidden', 'false');
+    btn.setAttribute('aria-expanded','false');
+  }
+
+  // keep a fallback global function if some pages still use inline onclick
+  window.toggleMenu = toggleMenu;
+})();
 </script>
+
 
 <body>
 <nav id="navbar">
@@ -65,6 +111,7 @@
 
 
 </html>
+
 
 
 
