@@ -93,6 +93,22 @@ body {
   #navbar .icon { display:none !important; }
 }
 
+/* Base hidden state for mobile */
+@media (max-width: 768px) {
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    position: absolute;
+    top: 60px; /* adjust to height of your navbar */
+    right: 0;
+    width: 200px;
+  }
+
+  #nav-links.show {
+    display: flex !important;
+  }
+}
 
 
 /* CSS */
@@ -401,6 +417,7 @@ footer {
   color: white;
 
 }
+
 
 
 
