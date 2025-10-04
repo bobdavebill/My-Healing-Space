@@ -11,6 +11,31 @@
 <link rel="stylesheet" href="style.css">
 
 </head>
+
+<body>
+ <nav id="navbar">
+  <a class="logo" href="index.html">My Healing Space</a>
+
+<button class="icon" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <i class="fas fa-bars" aria-hidden="true"></i>
+  </button>
+  <!-- links container -->
+  <div id="nav-links" aria-hidden="true">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link active">Services</a>
+  </div>
+</nav>
+
+
+<div style="position:relative; padding: 50px 80px; background-color:#ddf2d1; color:#ddd;">
+<h3 style="color:#000000; text-align: center;">Services</h3></div>
+<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+<stripe-pricing-table pricing-table-id="prctbl_1SCCC81OcjdVzqEJInuLDvhx"
+publishable-key="pk_test_51SCC1Y1OcjdVzqEJxFfYPX8kDreZxElkgtaN26IORQYfgmbYe8TC3ZV2P02H1isWXJs2FTy4EGjI7RXFJDbkq9i000Wss8CaWL">
+</stripe-pricing-table>
+
 <script>
 (function(){
   const btn = document.getElementById('nav-toggle');
@@ -62,35 +87,10 @@
   window.toggleMenu = toggleMenu;
 })();
 </script>
-
-<body>
- <nav id="navbar">
-  <a class="logo" href="index.html">My Healing Space</a>
-
-<button class="icon" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-    <i class="fas fa-bars" aria-hidden="true"></i>
-  </button>
-  <!-- links container -->
-  <div id="nav-links" aria-hidden="true">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="contact.html" class="nav-link">Contact</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="services.html" class="nav-link active">Services</a>
-  </div>
-</nav>
-
-
-<div style="position:relative; padding: 50px 80px; background-color:#ddf2d1; color:#ddd;">
-<h3 style="color:#000000; text-align: center;">Services</h3></div>
-<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-<stripe-pricing-table pricing-table-id="prctbl_1SCCC81OcjdVzqEJInuLDvhx"
-publishable-key="pk_test_51SCC1Y1OcjdVzqEJxFfYPX8kDreZxElkgtaN26IORQYfgmbYe8TC3ZV2P02H1isWXJs2FTy4EGjI7RXFJDbkq9i000Wss8CaWL">
-</stripe-pricing-table>
-
-
 </body>
 
 </html>
+
 
 
 
