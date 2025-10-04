@@ -11,102 +11,90 @@ body {
 *{box-sizing:border-box;margin:0;padding:0}
 
 /* NAVBAR base */
+/* General reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ddf2d1;
+  color: #000;
+}
+
+/* Navbar base */
 #navbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background:#333;
-  padding:10px 16px;
-  position:relative;
-  z-index:1000;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 16px;
+  position: relative;
+  z-index: 1000;
 }
 
 #navbar .logo {
-  color:#fff;
-  text-decoration:none;
-  font-weight:700;
-  font-size:18px;
-  padding:8px 12px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
 }
 
-/* nav links (desktop default) */
 #nav-links {
-  display:flex;
-  gap:8px;
-  align-items:center;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 #nav-links a {
-  color:#fff;
-  text-decoration:none;
-  padding:10px 12px;
-  border-radius:4px;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 4px;
 }
 
 #nav-links a.active {
-  background:#04AA6D;
-  color:#fff;
+  background-color: #04AA6D;
+  color: #fff;
 }
 
-/* hamburger (hidden by default) */
+/* Hamburger button (hidden on desktop) */
 #navbar .icon {
-  display:none;
-  background:none;
-  border:0;
-  color:#fff;
-  font-size:22px;
-  cursor:pointer;
-  padding:8px;
+  display: none;
+  font-size: 22px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
 }
 
-/* a11y focus */
-#navbar a:focus, #navbar .icon:focus { outline:2px solid rgba(255,255,255,0.6); outline-offset:3px; }
-
-/* --- MOBILE: <=768px --- */
-@media (max-width:768px) {
-  /* hide links until toggled, then show vertically */
-  #nav-links {
-    display:none;
-    flex-direction:column;
-    width:100%;
-    background:#333;
-    position:absolute;
-    left:0;
-    top:100%;
-    box-shadow:0 6px 18px rgba(0,0,0,.15);
-  }
-
-  #nav-links a {
-    display:block;
-    padding:14px;
-    text-align:center;
-    border-top:1px solid rgba(255,255,255,0.06);
-  }
-
-  #navbar .icon { display:block; }
-  #nav-links.show { display:flex; }
-}
-
-/* make sure desktop explicitly shows links even if something else overrides */
-@media (min-width:769px) {
-  #nav-links { display:flex !important; position:static; box-shadow:none; }
-  #navbar .icon { display:none !important; }
-}
-
-/* Base hidden state for mobile */
+/* Mobile styles */
 @media (max-width: 768px) {
   #nav-links {
     display: none;
     flex-direction: column;
-    background: #333;
+    width: 100%;
+    background-color: #333;
     position: absolute;
-    top: 60px; /* adjust to height of your navbar */
-    right: 0;
-    width: 200px;
+    top: 50px;
+    left: 0;
+  }
+
+  #nav-links a {
+    display: block;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   #nav-links.show {
-    display: flex !important;
+    display: flex;
+  }
+
+  #navbar .icon {
+    display: block;
   }
 }
 
@@ -390,6 +378,7 @@ footer {
   padding: 1rem 0;
   margin-top: 2rem;
 }
+
 
 
 
